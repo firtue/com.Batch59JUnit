@@ -49,5 +49,16 @@ public class C04_Assertions {
         String expectedUrl="https://www.facebook.com";
         String actualUrl= driver.getCurrentUrl();
         Assert.assertEquals("Url beklenenden farklı çıktı",expectedUrl, actualUrl);
+        /*
+        Assert ile yaptığımız testler assertion failed olursa Java kodların çalışmasını durdurur
+        ve Assert classı'ı bizi hata konusunda bilgilendirir
+
+                    org.junit.ComparisonFailure: Url beklenenden farklı çıktı
+                    Expected :https://www.facebook.com
+                    Actual   :https://www.amazon.com/
+                    <Click to see difference>
+
+        Böylece hatanın ne olduğunu araştırmamıza gerek kalmadan JUnit bize raporlamış olacak
+         */
     }
 }
