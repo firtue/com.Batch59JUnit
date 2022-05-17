@@ -1,10 +1,12 @@
 package practice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.locators.RelativeLocator;
 
 import java.time.Duration;
 
@@ -31,5 +33,33 @@ public class Q2 {
     @Before
     public void testtenOnce(){
         driver.get("http://www.bestbuy.com");
+    }
+
+    @After
+    public void kapat(){
+        driver.close();
+    }
+
+    @Test
+    public void titleTest(){
+        Assert.assertTrue("Title Best kelimesini içermiyor",driver.getTitle().contains("Best"));
+    }
+
+    @Test
+    public void logoTest(){
+        // WebElement logoBestBuy = driver.findElement(By.xpath("//img[@class='logo']"));
+        WebElement helloHeading = driver.findElement(By.xpath("//div[@class='heading']"));
+        WebElement logoBestBuy = driver.findElement(RelativeLocator.with(By.tagName("img")).above(helloHeading));
+
+        Assert.assertTrue(logoBestBuy.isDisplayed());
+    }
+
+    @Test
+    public void mexicoLinkTest(){
+        WebElement usLink = driver.findElement(By.xpath("//img[@alt='United States']"));
+        WebElement chooseYazisi = driver.findElement(By.xpath("//h1[.='Choose a country.']"));
+        WebElement mexicoLink = driver.findElement(RelativeLocator.with(By.tagName("a")). toRightOf(usLink). below(chooseYazisi));
+
+        Assert.assertTrue(mexicoLink.isDisplayed());
     }
 }
