@@ -19,9 +19,9 @@ public class C05_KeyboardActions extends TestBase {
 
         Actions actions = new Actions(driver);
 
-        actions.click(aramaKutusu)
+        actions.click(aramaKutusu)  // Her harfi de teker teker yollamamıza gerek yok hepsini birden yazabiliriz -> .sendKeys("Nutella")
                 .keyDown(Keys.SHIFT)
-                .sendKeys("n")
+                .sendKeys("n")      // SHIFT kullanmak zorunlu değil .sendKeys("N") şeklinde de yazabiliriz
                 .keyUp(Keys.SHIFT)
                 .sendKeys("u")
                 .sendKeys("t")
