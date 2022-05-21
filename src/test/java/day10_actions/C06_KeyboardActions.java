@@ -21,8 +21,15 @@ public class C06_KeyboardActions extends TestBase {
         Actions actions = new Actions(driver);
         actions.sendKeys("E").sendKeys("r").sendKeys("d").sendKeys("e").sendKeys("m").sendKeys(Keys.TAB)
                 .sendKeys("Ergin").sendKeys(Keys.TAB)
-                .sendKeys("643235467").sendKeys(Keys.TAB)
+                .sendKeys("a.eeeerdemergin@gmail.com").sendKeys(Keys.TAB)
                 .sendKeys("1").sendKeys("2").sendKeys("3").sendKeys("4").sendKeys("5").sendKeys(Keys.TAB)
+                .sendKeys(Keys.TAB)
+                .sendKeys("1").sendKeys(Keys.TAB)
+                .sendKeys("Eki").sendKeys(Keys.TAB)
+                .sendKeys("2002").sendKeys(Keys.TAB)
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ENTER)
                 .perform();
 
         Thread.sleep(3000);
