@@ -24,10 +24,10 @@ public class C01_ReadExcel {
         Sheet sheet= workbook.getSheet("Sayfa1");
 
         //11. Row objesi olusturun sheet.getRow(index)
-        Row row= sheet.getRow(3);
+        Row row= sheet.getRow(174);
 
         //12. Cell objesi olusturun row.getCell(index)
-        Cell cell= row.getCell(3);
+        Cell cell= row.getCell(2);
 
         System.out.println(cell);
 
