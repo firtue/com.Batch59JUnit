@@ -24,7 +24,7 @@ public class C03_ReadExcel {
         String actualData= banaDataGetirty(satirNo-1, sutunNo-1); // cunku excel index ile calisir
     }
 
-    private String banaDataGetirty(int satirIndex, int sutunIndex) throws IOException {
+    public static String banaDataGetirty(int satirIndex, int sutunIndex) throws IOException {
         String istenenData="";
         String dosyaYolu= "src/resources/ulkeler.xlsx";
 
